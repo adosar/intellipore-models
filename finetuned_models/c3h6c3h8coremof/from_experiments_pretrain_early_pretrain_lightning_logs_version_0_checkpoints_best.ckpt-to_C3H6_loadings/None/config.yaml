@@ -1,0 +1,70 @@
+bias_init: true
+ckpt_path: experiments/pretrain/early_pretrain/lightning_logs/version_0/checkpoints/best.ckpt
+ft_backbone_lr: 0.001
+ft_head_lr: 0.01
+index_col: cifid
+labels_path: /home/asarikas/databases/SpbNet/benchmark/c3h6c3h8coremof/all.csv
+n_frozen_layers: 1
+n_runs:
+- 1
+target: C3H6_loadings
+train_batch_size: 32
+train_sizes:
+- null
+trainer:
+  accelerator: gpu
+  accumulate_grad_batches: 1
+  barebones: false
+  benchmark: null
+  callbacks:
+    class_path: lightning.pytorch.callbacks.ModelCheckpoint
+    init_args:
+      auto_insert_metric_name: true
+      dirpath: null
+      enable_version_counter: true
+      every_n_epochs: null
+      every_n_train_steps: null
+      filename: best
+      mode: max
+      monitor: val_R2Score
+      save_last: null
+      save_on_train_epoch_end: null
+      save_top_k: 1
+      save_weights_only: false
+      train_time_interval: null
+      verbose: false
+  check_val_every_n_epoch: 10
+  default_root_dir: experiments/evaluate/benchmark/c3h6c3h8coremof/from_experiments_pretrain_early_pretrain_lightning_logs_version_0_checkpoints_best.ckpt-to_C3H6_loadings/None/
+  detect_anomaly: false
+  deterministic: null
+  devices: 1
+  enable_checkpointing: null
+  enable_model_summary: null
+  enable_progress_bar: null
+  fast_dev_run: false
+  gradient_clip_algorithm: null
+  gradient_clip_val: null
+  inference_mode: true
+  limit_predict_batches: null
+  limit_test_batches: null
+  limit_train_batches: null
+  limit_val_batches: null
+  log_every_n_steps: null
+  logger: null
+  max_epochs: 1000
+  max_steps: -1
+  max_time: null
+  min_epochs: null
+  min_steps: null
+  num_nodes: 1
+  num_sanity_val_steps: null
+  overfit_batches: 0.0
+  plugins: null
+  precision: null
+  profiler: null
+  reload_dataloaders_every_n_epochs: 0
+  strategy: auto
+  sync_batchnorm: false
+  use_distributed_sampler: true
+  val_check_interval: null
+voxels_path: /home/asarikas/databases/SpbNet/benchmark/c3h6c3h8coremof/voxels_data_GS32_CB30
