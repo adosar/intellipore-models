@@ -3,10 +3,12 @@ Fine-tuned model checkpoints from the paper *IntelliPore: A Foundation Model for
 
 The checkpoints can be used either for inference or as initialization for further fine-tuning on related adsorption tasks.
 
-**1. Install AIdsorb**
+### Load a model
+
+**1. Install dependencies**
 
 ```bash
-pip install "aidsorb>=3.0.0"
+pip install "aidsorb>=3.0.0" torchvision
 ```
 
 <details>
@@ -154,6 +156,16 @@ model.load_state_dict(state_dict)
 
 # Your code goes here
 ```
+
+### Use a model
+
+> [!IMPORTANT]
+> The energy images must be created 
+```python
+from aidsorb.utils.voxels import voxels_from_file
+
+img = voxels_from_file('path/to/CIF', grid_size=32, cubic_box=30)
+
 
 For examples of inference and fine-tuning, please refer to the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/stable/auto_examples/index.html).
 
