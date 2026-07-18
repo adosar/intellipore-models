@@ -158,8 +158,9 @@ model.load_state_dict(state_dict)
 For examples of inference and fine-tuning, please refer to the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/stable/auto_examples/index.html).
 
 ## Performance summary
+Comparison of IntelliPore and other baseline models for gas adsorption prediction in terms of $R^2$ (higher is better). 
 
-$R^2$ (higher is better) of IntelliPore and other baseline models for gas adsorption prediction. **Best** results are shown in **bold**.
+**Best** model is highlighted with **bold**.
 
 | Adsorption Property                                                                 | CGCNN   | MOFormer   | PMTransformer   | SpbNet    | IntelliPore |
 |:------------------------------------------------------------------------------------|:--------|:-----------|:----------------|:----------|:--------------|
