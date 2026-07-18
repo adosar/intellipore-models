@@ -146,7 +146,7 @@ from aidsorb.modules.voxels import IntelliPore
 
 model_id = ...
 
-url = 'https://raw.githubusercontent.com/adosar/intellipore-models/master/finetuned_models/{model_id}.ckpt'
+url = f'https://raw.githubusercontent.com/adosar/intellipore-models/master/finetuned_models/{model_id}.ckpt'
 state_dict = torch.hub.load_state_dict_from_url(url, map_location='cpu')
 
 model = IntelliPore()
