@@ -1,5 +1,5 @@
 ## About
-Fine-tuned model checkpoints from the paper: **IntelliPore: A Foundation Model for Gas Adsorption in Porous Materials**.
+Fine-tuned model checkpoints from the paper *IntelliPore: A Foundation Model for Gas Adsorption in Porous Materials*.
 
 The checkpoints can be used either for inference or as initialization for further fine-tuning on related adsorption tasks.
 
