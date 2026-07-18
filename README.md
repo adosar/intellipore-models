@@ -159,7 +159,7 @@ For examples of inference and fine-tuning, please refer to the [**AIdsorb Galler
 
 ## Performance summary
 
-The table below compares $R^2$ scores (higher is better) of IntelliPore and other state-of-the-art models. **Best** results are shown in **bold**.
+$R^2$ (higher is better) of IntelliPore and other baseline models for gas adsorption prediction. **Best** results are shown in **bold**.
 
 | Adsorption Property                                                                 | CGCNN   | MOFormer   | PMTransformer   | SpbNet    | IntelliPore |
 |:------------------------------------------------------------------------------------|:--------|:-----------|:----------------|:----------|:--------------|
