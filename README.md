@@ -170,10 +170,17 @@ import torch
 from aidsorb.utils.voxels import voxels_from_file
 from aidsorb.transforms.voxels import ClipScaleVoxels
 
+# Generate and preprocess an energy image
 img = voxels_from_file('path/to/CIF', grid_size=32, cubic_box=30)
 img = torch.from_numpy(img)  # (D, H, W)
 img = img[None, None]  # (1, 1, D, H, W) Add channel and batch dimension
 x = ClipScaleVoxels()
+
+# Freeze the model for inference
+model.eval()
+model.requires_grad_(False)
+
+# Predict
 out = model(x)
 ```
 
