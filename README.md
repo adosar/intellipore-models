@@ -167,14 +167,14 @@ For more examples of inference and fine-tuning, please refer to the [**AIdsorb D
 > 
 ```python
 import torch
-from aidsorb.utils.voxels import voxels_from_file
+from aidsorb.utils import voxels_from_file
 from aidsorb.transforms.voxels import ClipScaleVoxels
 
 # Generate and preprocess an energy image
 img = voxels_from_file('path/to/CIF', grid_size=32, cubic_box=30)
 img = torch.from_numpy(img)  # (D, H, W)
 img = img[None, None]  # (1, 1, D, H, W) Add channel and batch dimension
-x = ClipScaleVoxels()
+x = ClipScaleVoxels()(img)
 
 # Freeze the model for inference
 model.eval()
