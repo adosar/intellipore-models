@@ -8,7 +8,7 @@ The checkpoints can be used either for inference or as initialization for furthe
 **1. Install dependencies**
 
 ```bash
-pip install "aidsorb>=3.0.0" torchvision
+pip install "aidsorb>=3.0.0"
 ```
 
 <details>
@@ -157,17 +157,25 @@ model.load_state_dict(state_dict)
 # Your code goes here
 ```
 
-### Use a model
+### Basic usage
+This example demonstrated inference for a single material with one of the fine-tuned models.
+
+For more examples of inference and fine-tuning, please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/stable/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/stable/auto_examples/index.html).
 
 > [!IMPORTANT]
-> The energy images must be created 
+> The energy images must be generated and preprocessed in the same way as in the fine-tuned models.
+> 
 ```python
+import torch
 from aidsorb.utils.voxels import voxels_from_file
+from aidsorb.transforms.voxels import ClipScaleVoxels
 
 img = voxels_from_file('path/to/CIF', grid_size=32, cubic_box=30)
-
-
-For examples of inference and fine-tuning, please refer to the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/stable/auto_examples/index.html).
+img = torch.from_numpy(img)  # (D, H, W)
+img = img[None, None]  # (1, 1, D, H, W) Add channel and batch dimension
+x = ClipScaleVoxels()
+out = model(x)
+```
 
 ## Performance summary
 Comparison of IntelliPore and other baseline models for gas adsorption prediction in terms of $R^2$ (higher is better). 
