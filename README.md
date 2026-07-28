@@ -160,7 +160,7 @@ model.load_state_dict(state_dict)
 ### Basic usage
 This example demonstrated inference for a single material with one of the fine-tuned models.
 
-For more examples of inference and fine-tuning, please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/stable/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/stable/auto_examples/index.html).
+For more examples of inference and fine-tuning, please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/latest/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/latest/auto_examples/index.html).
 
 > [!IMPORTANT]
 > The energy images must be generated and preprocessed in the same way as in the fine-tuned models.
