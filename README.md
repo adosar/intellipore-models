@@ -169,12 +169,21 @@ For more examples please refer to the [**AIdsorb Documentation**](https://aidsor
 import torch
 from aidsorb.utils import voxels_from_file
 from aidsorb.transforms.voxels import ClipScaleVoxels
+from aidsorb.modules.voxels import IntelliPore
+
+model_id = ...  # Select a model_id
 
 # Generate and preprocess an energy image
 img = voxels_from_file('path/to/CIF', grid_size=32, cubic_box=30)
 img = torch.from_numpy(img)  # (D, H, W)
 img = img[None, None]  # (1, 1, D, H, W) Add channel and batch dimension
 x = ClipScaleVoxels()(img)
+
+# Load the trained weights
+url = f'https://raw.githubusercontent.com/adosar/intellipore-models/master/finetuned_models/{model_id}.ckpt'
+state_dict = torch.hub.load_state_dict_from_url(url, map_location='cpu')
+model = IntelliPore()
+model.load_state_dict(state_dict)
 
 # Freeze the model for inference
 model.eval()
@@ -185,7 +194,7 @@ out = model(x)
 ```
 
 ## Performance summary
-$R^2$ (higher is better) of IntelliPore and other baseline models for gas adsorption prediction.
+$R^2$ (higher is better) of IntelliPore and other baseline models for gas adsorption property prediction.
 
 **Best** model is highlighted with **bold**.
 
