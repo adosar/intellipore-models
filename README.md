@@ -12,7 +12,7 @@ pip install "aidsorb>=3.0.0"
 ```
 
 <details>
-<summary><strong>2. Load one of the available checkpoints</strong> (click to expand)</summary>
+<summary><strong>2. Load one of the available models</strong> (click to expand)</summary>
 
 ```python
   {
@@ -146,7 +146,7 @@ pip install "aidsorb>=3.0.0"
 import torch
 from aidsorb.modules.voxels import IntelliPore
 
-model_id = ...
+model_id = ...  # Select a model_id
 
 url = f'https://raw.githubusercontent.com/adosar/intellipore-models/master/finetuned_models/{model_id}.ckpt'
 state_dict = torch.hub.load_state_dict_from_url(url, map_location='cpu')
@@ -160,7 +160,7 @@ model.load_state_dict(state_dict)
 ### Basic usage
 This example demonstrated inference for a single material with one of the fine-tuned models.
 
-For more examples of inference and fine-tuning, please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/latest/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/latest/auto_examples/index.html).
+For more examples please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/latest/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/latest/auto_examples/index.html).
 
 > [!IMPORTANT]
 > The energy images must be generated and preprocessed in the same way as in the fine-tuned models.
@@ -185,7 +185,7 @@ out = model(x)
 ```
 
 ## Performance summary
-Comparison of IntelliPore and other baseline models for gas adsorption prediction in terms of $R^2$ (higher is better). 
+$R^2$ (higher is better) of IntelliPore and other baseline models for gas adsorption prediction.
 
 **Best** model is highlighted with **bold**.
 
