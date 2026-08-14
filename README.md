@@ -3,6 +3,10 @@ Fine-tuned models from the paper *IntelliPore: A Foundation Model for Gas Adsorp
 
 These can be used either for inference or as initialization for further fine-tuning on related adsorption tasks.
 
+<p align="center">
+  <img alt="RetNeXt feature maps" src="https://raw.githubusercontent.com/adosar/intellipore-paper/master/images/toc.png" width="65%"/>
+</p>
+
 ### Load a model
 
 **1. Install dependencies**
