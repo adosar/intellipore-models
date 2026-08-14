@@ -1,7 +1,7 @@
 ## About
 Fine-tuned models from the paper *IntelliPore: A Foundation Model for Gas Adsorption in Porous Materials*.
 
-The models can be used either for inference or as initialization for further fine-tuning on related adsorption tasks.
+These can be used either for inference or as initialization for further fine-tuning on related adsorption tasks.
 
 ### Load a model
 
