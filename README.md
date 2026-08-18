@@ -164,11 +164,13 @@ model.load_state_dict(state_dict)
 ### Basic usage
 This example demonstrated inference for a single material with one of the fine-tuned models.
 
-For more examples please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/latest/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/latest/auto_examples/index.html).
+> [!TIP]
+> For a code-free inference, you can also use [**AIdsorb-online**](https://aidsorb-online.streamlit.app/).
+> 
+> For advanced usage please refer to the [**AIdsorb Documentation**](https://aidsorb.readthedocs.io/en/latest/) and the [**AIdsorb Gallery**](https://aidsorb.readthedocs.io/en/latest/auto_examples/index.html).
 
 > [!IMPORTANT]
 > The energy images must be generated and preprocessed in the same way as in the fine-tuned models.
-> 
 ```python
 import torch
 from aidsorb.utils import voxels_from_file
